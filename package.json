@@ -9,7 +9,7 @@
 	"categories": [
 		"Other"
 	],
-	"icon": "",
+	"icon": "https://github.com/zcfrank1st/vscode-flow-lang-plugin/blob/master/image/flow.png?raw=true",
 	"activationEvents": [
 		"onCommand:extension.flowchart"
 	],
