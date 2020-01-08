@@ -12,7 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	if (flowPath && editor) {
 		let disposable = vscode.commands.registerTextEditorCommand('extension.flowchart', () => {
-			let documentText = editor.document.getText();
+			let documentText = editor.document.getText().replace(/\r\n/g, "");
 			
 			const panel = vscode.window.createWebviewPanel(
 				'flowChart',
@@ -24,7 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
 				}
 			)
 
-			exec(`java -Dtext="${documentText}" -jar ${flowPath.get("path")}`, (error, stdout, stderr) =>{
+			exec(`java -Dfile.encoding=utf-8 -Dtext="${documentText}" -jar ${flowPath.get("path")}`, (error, stdout, stderr) =>{
 				if (!error) {
 					panel.webview.html = stdout;
 				} else {

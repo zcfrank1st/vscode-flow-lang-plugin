@@ -1,0 +1,21 @@
+{
+    "scopeName": "source.fl",
+    "patterns": [{ "include": "#expression" }],
+    "repository": {
+      "expression": {
+        "patterns": [{ "include": "#step" }, { "include": "#opt" }, { "include": "#label" }]
+      },
+      "step": {
+        "match": "start|end|ifstep|step",
+        "name": "flow.step"
+      },
+      "opt": {
+        "match": "and|to",
+        "name": "flow.opt"
+      },
+      "label": {
+        "match": "comment|called",
+        "name": "flow.label"
+      }
+    }
+  }
