@@ -9,6 +9,7 @@
 	"categories": [
 		"Other"
 	],
+	"icon": "",
 	"activationEvents": [
 		"onCommand:extension.flowchart"
 	],
